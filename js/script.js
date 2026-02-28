@@ -1,13 +1,16 @@
-const hamburger = document.getElementById("hamburger");
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
 
-const navLinks = document.getElementById("nav-links");
-
-hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("active");
-  navLinks.classList.toggle("active");
+// Abre/Fecha menu lateral
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
 });
 
-document.querySelectorAll(".nav-links a").forEach((link) => {
-  hamburger.classList.remove("active");
-  navLinks.classList.remove("active");
+// Fecha o menu ao clicar em um link (âncora)
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+    });
 });
